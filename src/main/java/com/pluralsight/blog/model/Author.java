@@ -18,8 +18,12 @@ public class Author {
     private Long id;
     private String firstname;
     private String lastname;
+    @JsonIgnore
     private String username;
     private String password;
+
+    @OneToMany
+    List<Post> posts =  new ArrayList<>();;
 
     public Author() {
         super();
@@ -85,10 +89,10 @@ public class Author {
     }
 
     public List<Post> getPosts() {
-        return null;
+        return posts;
     }
 
     public void addPost(Post post) {
-        return;
+
     }
 }
