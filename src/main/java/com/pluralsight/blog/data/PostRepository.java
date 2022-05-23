@@ -11,7 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-@RestResource
+
 public interface PostRepository extends JpaRepository<Post, Long> {
-    List<Post>findByTitleContaining(String title);
+    @RestResource(rel = "contains-title",path = "containsTitle")
+    public List<Post>  findByTitleContaining(String title);
 }
