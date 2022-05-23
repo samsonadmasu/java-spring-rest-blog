@@ -20,6 +20,7 @@ public class Author {
     private String lastname;
     @JsonIgnore
     private String username;
+    @JsonIgnore
     private String password;
 
     @OneToMany
